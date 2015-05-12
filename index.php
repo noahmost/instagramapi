@@ -7,27 +7,32 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale-1">
+        
         <title></title>
+        
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
     </head>
     <body>
         <?php
 //        configuration of php server
             set_time_limit(0);
-            ini_set(default_socket_timeout, 300);
+            ini_set('default_socket_timeout', 300);
             session_start();
             
 //            making constants using define
             
-            define('client_id', b5eb5a06065644139b3669194284658e);
-            define('client_secret', a10f99b5e29946f7822968b0101d21c0);
-            define('client_id', b5eb5a06065644139b3669194284658e);
-            define('client_id', b5eb5a06065644139b3669194284658e);
+            define('client_ID', 'b5eb5a06065644139b3669194284658e');
+            define('client_Secret', 'a10f99b5e29946f7822968b0101d21c0');
+            define('redirectURI', 'http://localhost/apiapp/index.php');
+            define('ImageDirectory', 'pics/');
             
         ?>
-        CLIENT INFO
-        CLIENT ID	b5eb5a06065644139b3669194284658e
-        CLIENT SECRET	a10f99b5e29946f7822968b0101d21c0
-        WEBSITE URL	http://localhost/apiapp/index.php
-        REDIRECT URI	http://localhost/apiapp/index.php
+        <!--creating a login for people to go and give approval for our app to access there instagram 
+            after getting approval we are nwo going to have the information so that we can play with it-->
+        <a href="https:api.instagram/oauth/authorize/?client_id=<?php echo client_ID; ?>&redirect_url=<?php echo redirectURI ?>&response_type=code">LOGIN</a>
+        <script src="js/main.js"></script>
     </body>
 </html>
