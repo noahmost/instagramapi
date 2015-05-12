@@ -24,7 +24,7 @@ and open the template in the editor.
             
 //            making constants using define
             
-            define('client_ID', 'b5eb5a06065644139b3669194284658e');
+            define('clientID', 'b5eb5a06065644139b3669194284658e');
             define('client_Secret', 'a10f99b5e29946f7822968b0101d21c0');
             define('redirectURI', 'http://localhost/apiapp/index.php');
             define('ImageDirectory', 'pics/');
@@ -32,7 +32,7 @@ and open the template in the editor.
         ?>
         <!--creating a login for people to go and give approval for our app to access there instagram 
             after getting approval we are nwo going to have the information so that we can play with it-->
-        <a href="https:api.instagram/oauth/authorize/?client_id=<?php echo client_ID; ?>&redirect_url=<?php echo redirectURI ?>&response_type=code">LOGIN</a>
+        <a href="https:api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI ?>&response_type=code">LOGIN</a>
         <script src="js/main.js"></script>
     </body>
 </html>
