@@ -29,16 +29,16 @@
             
             //Function to get userID cause userName doesnt allow us to get pictures
             function getUserID($userName){
-                $url = 'http://api.instagram.com/v1/users/search?q=' . $userName . '&client_id='. clientID;
+                $url = 'https://api.instagram.com/v1/users/search?q=' . $userName . '&client_id='. clientID;
                 $instagramInfo = connectToInstagram($url);
                 $results = json_decode($instagramInfo, true);
                 
-                return $results['data']['0']['id'];
+                return $results['data'][0]['id'];
             }
            
             //Function to print images onto screen
             function printImages($userID){
-	$url = 'http://api.instagram.com/v1/users/'.$userID.'/media/recent?client_id='.clientID.'&count=5';
+	$url = 'https://api.instagram.com/v1/users/'.$userID.'/media/recent?client_id='.clientID.'&count=5';
 	$instagramInfo = connectToInstagram($url);
 	$results = json_decode($instagramInfo, true);
 	//Parse through the information one by one
@@ -46,12 +46,23 @@
 		$image_url = $items['images']['low_resolution']['url'];//going to go through all of my results and give myself back the URL of those pictures 
 		//because we want to have it in the PHP Server.
 		echo '<img src=" '.$image_url.'"/>br/>';
+                
+                //calling a function to save that $image_url
+                savePictures($image_url);
+                
 	}
 }
-            
+            function savePictures($image_url){
+             echo $image_url. '<br>'; 
+             $filename = basename($image_url); //the filename is what we are storing basename is the phph bult in method that we are using to store imageurl
+             echo $filename . '<br>';
+             
+             $destination = ImageDirectory . $filename; //we are making sure the image doesnt exist in the storage
+             file_put_contents($destination, file_get_contents($image_url)); // goes and grabs an imagefile and stores it into our server
+            }
             
             if (isset($_GET['code'])){
-                $code = ($_GET['code']);
+                $code = $_GET['code'];
                 $url = 'https://api.instagram.com/oauth/access_token';
                 $access_token_settings = array('client_id' => clientID,
                     'client_secret' => clientSecret,
@@ -76,6 +87,9 @@
             $userID = getUserID($userName);
             
             printImages($userID);
+            ?>
+
+<?php
             }
             else{
             
@@ -89,22 +103,22 @@ and open the template in the editor.
 -->
 <html>
     <head>
-<!--        <meta charset="UTF-8">
+       <meta charset="UTF-8">
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale-1">-->
+        <meta name="viewport" content="width=device-width, initial-scale-1">
         
         <title></title>
         
-<!--        <link rel="stylesheet" href="css/style.css">
-        <link rel="author" href="humans.txt">-->
+        <link rel="stylesheet"  href="css/masters.css">
+        <!--<link rel="author" href="humans.txt">-->
     </head>
     <body>
-    
+        <div class="boody">
         <!--creating a login for people to go and give approval for our app to access there instagram 
             after getting approval we are nwo going to have the information so that we can play with it-->
         <a href="https:api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI ?>&response_type=code">LOGIN</a>
-<!--        <script src="js/main.js"></script>-->
-    </body>
+        </div>
+        </body>
 </html>
 <?php
             }
