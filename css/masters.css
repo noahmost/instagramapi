@@ -1,6 +1,27 @@
+.bod{
+    background-image: url('../background/triangular.png');
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        font-size: 100px;
+        color:black;
+        padding-top: 20%;
+}
+#bod2{
+    background-image: url('../background/triangular.png');
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        color: black;
+}
+#box{
+        background-image: url('../background/tweed.png');
+        width:400px;
+        margin:0 auto;
+        background-color: white;
+        color: black;
+}   
 @media screen and (max-width: 1024px) {
  .bod{
-        background-image: url('../background/dark_embroidery.png');
+        background-image: url('../background/triangular.png');
         font-family: 'Open Sans', sans-serif;
         text-align: center;
         font-size: 100px;
@@ -8,7 +29,7 @@
         padding-top: 20%;
    }
     #box{
-        background-image: url('../background/swirl_pattern.png');
+        background-image: url('../background/tweed.png');
         width:400px;
         margin:0 auto;
         background-color: white;
@@ -18,7 +39,7 @@
 
 @media screen and (max-width:375px){ 
     .bod{
-        background-image: url('../background/dark_embroidery.png');
+        background-image: url('../background/triangular.png');
         font-family: 'Open Sans', sans-serif;
         text-align: center;
         font-size: 100px;
@@ -27,7 +48,7 @@
         
     }
     #box{
-        background-image: url('../background/swirl_pattern.png');
+        background-image: url('../background/tweed.png');
         width:350px;
         margin:0 auto;
         background-color: white;

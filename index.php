@@ -88,6 +88,31 @@
             
             printImages($userID);
             ?>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+       <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale-1">
+        
+        <title></title>
+        
+        <link rel="stylesheet"  href="css/masters.css">
+        <!--<link rel="author" href="humans.txt">-->
+    </head>
+    <body id='bod2'>
+        <div id='box'>
+        <!--creating a login for people to go and give approval for our app to access there instagram 
+            after getting approval we are nwo going to have the information so that we can play with it-->
+<!--        <a href="https:api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI ?>&response_type=code">LOGIN</a>-->
+        </div>
+        </body>
+</html>
 
 <?php
             }
@@ -112,8 +137,8 @@ and open the template in the editor.
         <link rel="stylesheet"  href="css/masters.css">
         <!--<link rel="author" href="humans.txt">-->
     </head>
-    <body>
-        <div class="boody">
+    <body class='bod'>
+        <div id='box'>
         <!--creating a login for people to go and give approval for our app to access there instagram 
             after getting approval we are nwo going to have the information so that we can play with it-->
         <a href="https:api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI ?>&response_type=code">LOGIN</a>
