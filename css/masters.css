@@ -1,10 +1,15 @@
+img{
+    width: 300px;
+    margin: 50px 0px 0px 80px;
+    /*text-align: center;*/
+}
 .bod{
     background-image: url('../background/triangular.png');
         font-family: 'Open Sans', sans-serif;
         text-align: center;
-        font-size: 100px;
-        color:black;
-        padding-top: 20%;
+/*        font-size: 100px;
+        color:black;*/
+        padding-top: 17%;
 }
 #bod2{
     background-image: url('../background/triangular.png');
@@ -12,12 +17,26 @@
         text-align: center;
         color: black;
 }
+#box3{
+    text-align: center;
+    font-size: 50px;
+}
+#box2{
+        margin: 0px 0px 0px 0px;
+        color: black;
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Fjalla One', sans-serif;
+}
 #box{
         background-image: url('../background/tweed.png');
         width:400px;
-        margin:0 auto;
+        margin: 0 auto;
         background-color: white;
         color: black;
+        text-align: center;
+        font-size: 100px;
+        font-family: 'Fjalla One', sans-serif;
 }   
 @media screen and (max-width: 1024px) {
  .bod{

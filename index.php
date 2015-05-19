@@ -45,7 +45,7 @@
 	foreach ($results['data'] as $items) {
 		$image_url = $items['images']['low_resolution']['url'];//going to go through all of my results and give myself back the URL of those pictures 
 		//because we want to have it in the PHP Server.
-		echo '<img src=" '.$image_url.'"/>br/>';
+		echo '<img src=" '.$image_url.'"/><br/>';
                 
                 //calling a function to save that $image_url
                 savePictures($image_url);
@@ -53,9 +53,9 @@
 	}
 }
             function savePictures($image_url){
-             echo $image_url. '<br>'; 
+             //echo $image_url. '<br>'; 
              $filename = basename($image_url); //the filename is what we are storing basename is the phph bult in method that we are using to store imageurl
-             echo $filename . '<br>';
+             //echo $filename . '<br>';
              
              $destination = ImageDirectory . $filename; //we are making sure the image doesnt exist in the storage
              file_put_contents($destination, file_get_contents($image_url)); // goes and grabs an imagefile and stores it into our server
@@ -106,7 +106,8 @@ and open the template in the editor.
         <!--<link rel="author" href="humans.txt">-->
     </head>
     <body id='bod2'>
-        <div id='box'>
+        <div>
+            
         <!--creating a login for people to go and give approval for our app to access there instagram 
             after getting approval we are nwo going to have the information so that we can play with it-->
 <!--        <a href="https:api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI ?>&response_type=code">LOGIN</a>-->
@@ -131,6 +132,7 @@ and open the template in the editor.
        <meta charset="UTF-8">
         <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
         
         <title></title>
         
@@ -138,6 +140,9 @@ and open the template in the editor.
         <!--<link rel="author" href="humans.txt">-->
     </head>
     <body class='bod'>
+        <div id='box2'>
+            Instagram API
+        </div>
         <div id='box'>
         <!--creating a login for people to go and give approval for our app to access there instagram 
             after getting approval we are nwo going to have the information so that we can play with it-->
